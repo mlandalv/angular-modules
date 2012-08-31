@@ -12,8 +12,8 @@
 
     <!-- Required scripts -->
     <script src="../lib/jquery/jquery-1.8.0.js"></script>
-    <script src="../lib/angular/angular-1.0.1.js"></script>
     <script src="../lib/jquery-ui/jquery-ui-1.8.23.custom.js"></script>
+    <script src="../lib/angular/angular-1.0.1.js"></script>
     <script src="../lib/codemirror/lib/codemirror.js"></script>
     <script src="../lib/codemirror/mode/xml/xml.js"></script>
     <script src="../lib/codemirror/mode/javascript/javascript.js"></script>
@@ -34,20 +34,20 @@
     <h4>Button</h4>
     <p>
         By using the <code>jui-button</code> directive it's possible to transform links and buttons into jQuery UI buttons.
-        All you need to do is to add the <code>jui-button</code> attribute to the element.
+        All you need to do is to add the <code>jui-button</code> attribute to the target element.
     </p>
-    
+
     <textarea id="jquery-button-link" codemirror cm-options="{ mode: 'text/html', readOnly: true }">
         <a href="#" jui-button>A link</a>
+        <button jui-button>A button</button>
+        <input type="button" value="An input button" jui-button />
     </textarea>
 
     <a href="#" jui-button>A link</a>
+    <button jui-button>A button</button>
+    <input type="button" value="An input button" jui-button />
 
     <script type="text/javascript">
-        //CodeMirror.fromTextArea(document.getElementById('jquery-button-link'), {
-        //    mode: "text/html",
-        //    readOnly: true
-        //});
         angular.bootstrap(document, ['jquery-ui', 'codemirror']);
     </script>
 </body>
