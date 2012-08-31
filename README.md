@@ -1,4 +1,4 @@
 angular-modules
 ===============
 
-Yep.
+Training project.

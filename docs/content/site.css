@@ -1,0 +1,7 @@
+﻿body {
+    margin: 5px;
+}
+
+.CodeMirror-scroll {
+    height: auto;
+}

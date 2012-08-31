@@ -1,5 +1,5 @@
 ﻿describe("jquery-ui", function () {
-    it("should buttonize links", function () {
+    it("todo...", function () {
         // todo
     });
 });
