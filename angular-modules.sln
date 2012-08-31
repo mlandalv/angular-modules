@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57C5B6F5-D87D-49A6-B52F-FBBA9180A49E}"
 	ProjectSection(SolutionItems) = preProject
+		src\codemirror.js = src\codemirror.js
 		src\jquery-ui.js = src\jquery-ui.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0D85A9DE-F401-4CFB-96DB-D897106C1571}"
 	ProjectSection(SolutionItems) = preProject
+		test\codemirror.js = test\codemirror.js
 		test\jquery-ui.js = test\jquery-ui.js
 		test\SpecRunner.html = test\SpecRunner.html
 	EndProjectSection
@@ -18,8 +20,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F09241AD-19BF-48BD-9722-3827167C2866}"
+	ProjectSection(SolutionItems) = preProject
+		docs\index.html = docs\index.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{AA2E398C-4742-47D6-9AE5-501525B60032}"
+	ProjectSection(SolutionItems) = preProject
+		docs\content\site.css = docs\content\site.css
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA2E398C-4742-47D6-9AE5-501525B60032} = {F09241AD-19BF-48BD-9722-3827167C2866}
 	EndGlobalSection
 EndGlobal
