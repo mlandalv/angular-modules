@@ -5,3 +5,7 @@
 .CodeMirror-scroll {
     height: auto;
 }
+
+section.example {
+    background-color: #fafafa;
+}
