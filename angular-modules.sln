@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{F09241AD-1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{AA2E398C-4742-47D6-9AE5-501525B60032}"
 	ProjectSection(SolutionItems) = preProject
+		docs\content\main.css = docs\content\main.css
+		docs\content\normalize.css = docs\content\normalize.css
 		docs\content\site.css = docs\content\site.css
 	EndProjectSection
 EndProject
