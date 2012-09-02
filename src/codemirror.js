@@ -26,7 +26,7 @@ angular.module('codemirror', []).directive('codemirror', ['$parse', function ($p
                     codemirror.setOption('onChange', function (instance) {
                         var value = instance.getValue();
 
-                        // Do not trigger an update if cmModel is undefined.
+                        // Do not trigger an update if cmModel is undefined or no change has occurred.
                         if ((scope.cmModel || '') !== value) {
                             scope.$apply(function () {
                                 scope.cmModel = value;

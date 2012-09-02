@@ -32,11 +32,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{AA2E
 		docs\content\site.css = docs\content\site.css
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{1C79CC24-6B3B-4BA7-9EF9-C5B69B1415CA}"
+	ProjectSection(SolutionItems) = preProject
+		docs\scripts\app.js = docs\scripts\app.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "views", "views", "{A34BC488-41A0-42A6-8EE3-254B268391A2}"
+	ProjectSection(SolutionItems) = preProject
+		docs\views\codemirror.html = docs\views\codemirror.html
+		docs\views\index.html = docs\views\index.html
+		docs\views\jquery-ui.html = docs\views\jquery-ui.html
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AA2E398C-4742-47D6-9AE5-501525B60032} = {F09241AD-19BF-48BD-9722-3827167C2866}
+		{1C79CC24-6B3B-4BA7-9EF9-C5B69B1415CA} = {F09241AD-19BF-48BD-9722-3827167C2866}
+		{A34BC488-41A0-42A6-8EE3-254B268391A2} = {F09241AD-19BF-48BD-9722-3827167C2866}
 	EndGlobalSection
 EndGlobal

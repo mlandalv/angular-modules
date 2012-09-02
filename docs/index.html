@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="docsApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -9,6 +9,14 @@
     <link href="../lib/jquery-ui/smoothness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
     <link href="../lib/codemirror/lib/codemirror.css" rel="stylesheet">
     <link href="../docs/content/site.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Angular Modules Documentation</h1>
+    
+
+    <a href="#/modules/codemirror">CodeMirror</a> | <a href="#/modules/jquery-ui">jQuery UI</a>
+
+    <div ng-view></div>
 
     <!-- Required scripts -->
     <script src="../lib/jquery/jquery-1.8.0.js"></script>
@@ -23,69 +31,6 @@
     <!-- Module files -->
     <script src="../src/jquery-ui.js"></script>
     <script src="../src/codemirror.js"></script>
-</head>
-<body>
-    <h1>Angular Modules Documentation</h1>
-    <p>A project containing a few modules that aid in the use of common js libraries. To use the modules you might need to link in css files and js libraries they depend on.</p>
-
-    <h2>Modules</h2>
-    <h3>CodeMirror (codemirror)</h3>
-    <p>
-        CodeMirror resides in the module <code>codemirror</code> and allows you to mark <code>textarea</code> elements
-        to be syntax highlighted by CodeMirror. You can also, optionally, set the <code>cm-options</code> attribute to set options.
-    </p>
-
-    <section class="example">
-        <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-<textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-    <div>
-        <p>Foobar.</p>
-    </div>
-&lt;/textarea>
-        </textarea>
-
-        <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-<div>
-    <p>Foobar.</p>
-</div>
-        </textarea>
-    </section>
-
-    <p>It's also possible to keep your model in sync with the CodeMirror instance by setting the <code>cm-model</code> attribute.</p>
-    <p>Type code in the textarea below to see how it automatically is reflected in the CodeMirror instance, and vice versa!</p>
-
-    <section class="example">
-        <textarea ng-model="htmlCodeMirrorContent">
-        </textarea>
-
-        <textarea codemirror cm-model="htmlCodeMirrorContent" cm-options="{ mode: 'text/html' }">
-        </textarea>
-    </section>
-
-    <h3>jQuery UI (jquery-ui)</h3>
-    <p>The jQuery UI module contains directions used to transform elements based on the jQuery UI functionality.</p>
-    <p>All jQuery UI directives are prefixed by <code>jui</code> and reside in the <code>jquery-ui</code> module.</p>
-
-    <h4>Button</h4>
-    <p>
-        By using the <code>jui-button</code> directive it's possible to transform links and buttons into jQuery UI buttons.
-        All you need to do is to add the <code>jui-button</code> attribute to the target element.
-    </p>
-
-    <section class="example">
-        <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-<a href="#" jui-button>A link</a>
-<button jui-button>A button</button>
-<input type="button" value="An input button" jui-button />
-        </textarea>
-
-        <a href="#" jui-button>A link</a>
-        <button jui-button>A button</button>
-        <input type="button" value="An input button" jui-button />
-        </section>
-
-    <script type="text/javascript">
-        angular.bootstrap(document, ['jquery-ui', 'codemirror']);
-    </script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>
