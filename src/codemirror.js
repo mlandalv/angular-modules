@@ -12,8 +12,11 @@ angular.module('codemirror', []).directive('codemirror', ['$parse', function ($p
             var options = $parse(attrs.cmOptions)(this) || {},
                 codemirror = CodeMirror.fromTextArea(element[0], options);
 
-            return function (scope, element, attrs, controller) {
+            return function (scope, element, attrs) {
                 if (attrs.cmModel) {
+                    // Set initial value
+                    codemirror.setValue(scope.cmModel || '');
+
                     scope.$watch('cmModel', function () {
                         var modelValue = scope.cmModel;
 
