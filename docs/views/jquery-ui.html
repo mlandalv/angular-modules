@@ -13,8 +13,7 @@
     <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
 <a href="#" jui-button>A link</a>
 <button jui-button>A button</button>
-<input type="button" value="An input button" jui-button />
-    </textarea>
+<input type="button" value="An input button" jui-button /></textarea>
 </fieldset>
 
 <fieldset>
@@ -22,4 +21,44 @@
     <a href="#" jui-button>A link</a>
     <button jui-button>A button</button>
     <input type="button" value="An input button" jui-button />
+</fieldset>
+
+<h3>Accordion</h3>
+<p>To transform a div to an accordion apply the <code>jui-accordion</code> attribute. Additional options can be passed through <code>jui-options</code>.</p>
+
+<fieldset>
+    <legend>code</legend>
+    <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
+<div jui-accordion>
+	<h3><a href="#">Section 1</a></h3>
+	<div>
+		<p>Section 1 content</p>
+	</div>
+	<h3><a href="#">Section 2</a></h3>
+	<div>
+		<p>Section 2 content</p>
+	</div>
+	<h3><a href="#">Section 3</a></h3>
+	<div>
+		<p>Section 3 content</p>
+	</div>
+</div></textarea>
+</fieldset>
+
+<fieldset>
+    <legend>result</legend>
+    <div jui-accordion>
+	    <h3><a href="#">Section 1</a></h3>
+	    <div>
+		    <p>Section 1 content</p>
+	    </div>
+	    <h3><a href="#">Section 2</a></h3>
+	    <div>
+		    <p>Section 2 content</p>
+	    </div>
+	    <h3><a href="#">Section 3</a></h3>
+	    <div>
+		    <p>Section 3 content</p>
+	    </div>
+    </div>
 </fieldset>

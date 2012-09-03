@@ -11,3 +11,7 @@ fieldset {
 .CodeMirror-scroll {
     height: auto;
 }
+
+.ui-widget {
+    font-size: .9em;
+}
