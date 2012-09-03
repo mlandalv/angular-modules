@@ -9,8 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57C5B6F5-D87
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0D85A9DE-F401-4CFB-96DB-D897106C1571}"
 	ProjectSection(SolutionItems) = preProject
-		test\codemirror.js = test\codemirror.js
-		test\jquery-ui.js = test\jquery-ui.js
+		test\codemirrorSpec.js = test\codemirrorSpec.js
+		test\jquery-uiSpec.js = test\jquery-uiSpec.js
 		test\SpecRunner.html = test\SpecRunner.html
 	EndProjectSection
 EndProject
