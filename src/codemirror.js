@@ -5,7 +5,7 @@ angular.module('codemirror', []).directive('codemirror', ['$parse', function ($p
         restrict: 'A',
         scope: { cmModel: '=' },
         compile: function (element, attrs, transclude) {
-            if (!element.is('textarea')) {
+            if (element[0].nodeName !== 'TEXTAREA') {
                 throw new Error('Codemirror can only be applied on textarea elements.');
             }
 

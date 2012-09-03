@@ -4,6 +4,14 @@ describe('Module codemirror', function () {
     beforeEach(module('codemirror'));
 
     describe('Directive codemirror', function () {
+        it('throws error if not applied to textarea', function () {
+            inject(function ($compile, $rootScope) {
+                expect(function () {
+                    $compile('<div codemirror>foobar</div>')($rootScope);
+                }).toThrow();
+            });
+        });
+
         it('transforms textarea elements', function () {
             inject(function ($compile, $rootScope) {
                 var element = $compile('<textarea codemirror>foobar</textarea>')($rootScope),
@@ -26,7 +34,7 @@ describe('Module codemirror', function () {
             inject(function ($compile, $rootScope) {
                 $rootScope.model = 'foo';
 
-                var element = $compile('<textarea codemirror cm-model="model"></textarea>')($rootScope),
+                var element = $compile('<textarea codemirror cm-model="model">custom</textarea>')($rootScope),
                     codemirror = element.siblings()[0].CodeMirror;
 
                 expect(codemirror.getValue()).toEqual('foo');
