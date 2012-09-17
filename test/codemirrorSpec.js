@@ -4,27 +4,46 @@ describe('Module codemirror', function () {
     beforeEach(module('codemirror'));
 
     describe('Directive codemirror', function () {
-        it('throws error if not applied to textarea', function () {
+        it('transforms codemirror tags', function () {
             inject(function ($compile, $rootScope) {
-                expect(function () {
-                    $compile('<div codemirror>foobar</div>')($rootScope);
-                }).toThrow();
-            });
-        });
-
-        it('transforms textarea elements', function () {
-            inject(function ($compile, $rootScope) {
-                var element = $compile('<textarea codemirror>foobar</textarea>')($rootScope),
-                    codemirror = element.siblings()[0].CodeMirror;
+                var element = $compile('<codemirror>foobar</codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
 
                 expect(codemirror.getValue()).toEqual('foobar');
             });
         });
 
-        it('accepts options through cm-options', function () {
+        it('accepts options through options attribute', function () {
             inject(function ($compile, $rootScope) {
-                var element = $compile('<textarea codemirror cm-options="{ mode: \'javascript\' }">foobar</textarea>')($rootScope),
-                    codemirror = element.siblings()[0].CodeMirror;
+                var element = $compile('<codemirror options="{ mode: \'javascript\' }">foobar</codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
+
+                expect(codemirror.getOption('mode')).toEqual('javascript');
+            });
+        });
+
+        it('accepts readonly attribute', function () {
+            inject(function ($compile, $rootScope) {
+                var element = $compile('<codemirror readonly>foobar</codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
+
+                expect(codemirror.getOption('readOnly')).toEqual(true);
+            });
+        });
+
+        it('accepts linenumbers attribute', function () {
+            inject(function ($compile, $rootScope) {
+                var element = $compile('<codemirror linenumbers>foobar</codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
+
+                expect(codemirror.getOption('lineNumbers')).toEqual(true);
+            });
+        });
+
+        it('accepts mode attribute', function () {
+            inject(function ($compile, $rootScope) {
+                var element = $compile('<codemirror mode="javascript">foobar</codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
 
                 expect(codemirror.getOption('mode')).toEqual('javascript');
             });
@@ -34,8 +53,8 @@ describe('Module codemirror', function () {
             inject(function ($compile, $rootScope) {
                 $rootScope.model = 'foo';
 
-                var element = $compile('<textarea codemirror cm-model="model">custom</textarea>')($rootScope),
-                    codemirror = element.siblings()[0].CodeMirror;
+                var element = $compile('<codemirror ng-model="model">custom</codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
 
                 expect(codemirror.getValue()).toEqual('foo');
             });
@@ -45,8 +64,8 @@ describe('Module codemirror', function () {
             inject(function ($compile, $rootScope) {
                 $rootScope.model = 'foo';
 
-                var element = $compile('<textarea codemirror cm-model="model"></textarea>')($rootScope),
-                    codemirror = element.siblings()[0].CodeMirror;
+                var element = $compile('<codemirror ng-model="model"></codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
 
                 $rootScope.$apply(function () {
                     $rootScope.model = 'bar';
@@ -60,8 +79,8 @@ describe('Module codemirror', function () {
             inject(function ($compile, $rootScope) {
                 $rootScope.model = 'foo';
 
-                var element = $compile('<textarea codemirror cm-model="model"></textarea>')($rootScope),
-                    codemirror = element.siblings()[0].CodeMirror;
+                var element = $compile('<codemirror ng-model="model"></codemirror>')($rootScope),
+                    codemirror = element[0].children[0].CodeMirror;
 
                 codemirror.setValue('bar');
 

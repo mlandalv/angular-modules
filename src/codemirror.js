@@ -2,27 +2,32 @@
 
 angular.module('codemirror', []).directive('codemirror', ['$parse', function ($parse) {
     return {
-        restrict: 'A',
-        scope: { cmModel: '=' },
-        compile: function (element, attrs, transclude) {
-            if (element[0].nodeName !== 'TEXTAREA') {
-                throw new Error('Codemirror can only be applied on textarea elements.');
-            }
+        restrict:'E',
+        scope:{ model:'=ngModel' },
+        template:'<div></div>',
+        replace:true,
+        compile:function (element, attrs) {
+            var options = $parse(attrs.options)(this) || {},
+                codemirror;
 
-            var options = $parse(attrs.cmOptions)(this) || {},
-                codemirror = CodeMirror.fromTextArea(element[0], options);
+            options.readOnly = options.readOnly || !!attrs.$attr.readonly;
+            options.lineNumbers = options.lineNumbers || !!attrs.$attr.linenumbers;
+            options.mode = options.mode || attrs.mode;
+            options.value = options.value || element.context.innerHTML;
+
+            codemirror = CodeMirror(element[0], options);
 
             return function (scope, element, attrs) {
-                if (attrs.cmModel) {
+                if (attrs.$attr.hasOwnProperty('ngModel')) {
                     // Set initial value
-                    codemirror.setValue(scope.cmModel || '');
+                    codemirror.setValue(scope.model || '');
 
-                    scope.$watch('cmModel', function () {
-                        var modelValue = scope.cmModel;
+                    scope.$watch('model', function () {
+                        var modelValue = scope.model;
 
                         if (modelValue !== codemirror.getValue()) {
-                            // CodeMirror throws an error in if a non-string value is set.
-                            codemirror.setValue(scope.cmModel || '');
+                            // CodeMirror throws an error if a non-string value is set.
+                            codemirror.setValue(scope.model || '');
                         }
                     });
 
@@ -30,9 +35,9 @@ angular.module('codemirror', []).directive('codemirror', ['$parse', function ($p
                         var value = instance.getValue();
 
                         // Do not trigger an update if cmModel is undefined or no change has occurred.
-                        if ((scope.cmModel || '') !== value) {
+                        if ((scope.model || '') !== value) {
                             scope.$apply(function () {
-                                scope.cmModel = value;
+                                scope.model = value;
                             });
                         }
                     });

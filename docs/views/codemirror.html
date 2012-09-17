@@ -6,40 +6,32 @@
 
 <fieldset>
     <legend>code</legend>
-    <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-<textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-<div>
-    <p>Foobar.</p>
-</div>
-&lt;/textarea></textarea>
+<codemirror readonly="readonly" mode="text/html"><codemirror readonly="readonly" mode="text/html">
+    <div>
+        <p>Foobar.</p>
+    </div>
+</codemirror></codemirror>
 </fieldset>
 
 <fieldset>
     <legend>result</legend>
-    <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-<div>
-<p>Foobar.</p>
-</div></textarea>
+    <codemirror readonly="readonly" mode="text/html"><div>
+    <p>Foobar.</p>
+</div></codemirror>
 </fieldset>
 
-<p>It's also possible to keep your model in sync with the CodeMirror instance by setting the <code>cm-model</code> attribute.</p>
+<p>It's also possible to keep your model in sync with the CodeMirror instance by setting the <code>ng-model</code> attribute.</p>
 <p>Type code in the textarea below to see how it automatically is reflected in the CodeMirror instance, and vice versa!</p>
 
 <fieldset>
     <legend>code</legend>
-    <textarea codemirror cm-options="{ mode: 'text/html', readOnly: true }">
-<textarea ng-model="htmlCodeMirrorContent">
-&lt;/textarea>
-
-<textarea codemirror cm-model="htmlCodeMirrorContent" cm-options="{ mode: 'javascript' }">
-&lt;/textarea></textarea>
+    <codemirror mode="text/html" readonly="readonly"><codemirror mode="javascript" ng-model="jsContent"></codemirror></codemirror>
 </fieldset>
 
 <fieldset>
     <legend>result</legend>
-    <textarea ng-model="htmlCodeMirrorContent" cols="100" rows="5" style="font-family: monospace;">
+    <textarea ng-model="jsContent" cols="100" rows="5" style="font-family: monospace;">
     </textarea>
 
-    <textarea codemirror cm-model="htmlCodeMirrorContent" cm-options="{ mode: 'javascript' }">
-    </textarea>
+    <codemirror mode="javascript" ng-model="jsContent"></codemirror>
 </fieldset>
